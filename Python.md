@@ -496,3 +496,173 @@ numbers = [random.randint(1, 100) for _ in range(10)]
 print("Random Numbers:", numbers)
 print("Sum:", sum(numbers))
 ```
+---
+
+### **Laços `while` em Python**
+
+O loop **`while`** é usado para executar um bloco de código repetidamente enquanto uma condição é verdadeira. Vamos explorar como funciona, com exemplos e dicas.
+
+---
+
+### **1. Estrutura Básica do `while`**
+
+#### **Sintaxe:**
+```python
+while condição:
+    # Código a ser executado enquanto a condição for verdadeira
+```
+
+- **`condição`**: Uma expressão que é avaliada como `True` ou `False`.
+- O loop continua até que a condição se torne `False`.
+
+#### **Exemplo Básico:**
+```python
+x = 0
+while x < 5:
+    print(x)
+    x += 1
+```
+**Saída:**
+```
+0
+1
+2
+3
+4
+```
+
+---
+
+### **2. Loops Infinito com `while`**
+Se a condição nunca for `False`, o loop continuará para sempre.
+
+#### **Exemplo de Loop Infinito:**
+```python
+while True:
+    print("Este é um loop infinito!")
+    break  # Use "break" para sair do loop
+```
+
+---
+
+### **3. Palavras-Chave Úteis com `while`**
+1. **`break`**: Sai do loop imediatamente.
+   ```python
+   count = 0
+   while True:
+       if count == 3:
+           break
+       print(count)
+       count += 1
+   ```
+   **Saída:**
+   ```
+   0
+   1
+   2
+   ```
+
+2. **`continue`**: Pula para a próxima iteração do loop.
+   ```python
+   x = 0
+   while x < 5:
+       x += 1
+       if x == 3:
+           continue
+       print(x)
+   ```
+   **Saída:**
+   ```
+   1
+   2
+   4
+   5
+   ```
+
+3. **`else`**: Executa um bloco de código quando a condição do `while` se torna `False`.
+   ```python
+   x = 0
+   while x < 3:
+       print(x)
+       x += 1
+   else:
+       print("Loop terminado.")
+   ```
+   **Saída:**
+   ```
+   0
+   1
+   2
+   Loop terminado.
+   ```
+
+---
+
+### **4. Exemplos Práticos**
+
+#### **4.1. Contagem Regressiva**
+```python
+countdown = 10
+while countdown > 0:
+    print(f"Contagem regressiva: {countdown}")
+    countdown -= 1
+print("Fogo!")
+```
+**Saída:**
+```
+Contagem regressiva: 10
+Contagem regressiva: 9
+...
+Contagem regressiva: 1
+Fogo!
+```
+
+---
+
+#### **4.2. Pedindo Entrada do Usuário**
+Continuar pedindo uma entrada válida até que o usuário digite um valor aceitável.
+```python
+number = -1
+while number < 0:
+    number = int(input("Digite um número positivo: "))
+print(f"Você digitou: {number}")
+```
+
+---
+
+#### **4.3. Soma de Números**
+Somar números inteiros fornecidos pelo usuário até que ele digite `0`.
+```python
+total = 0
+while True:
+    num = int(input("Digite um número (0 para parar): "))
+    if num == 0:
+        break
+    total += num
+print(f"Soma total: {total}")
+```
+
+---
+
+#### **4.4. Gerando Números Aleatórios**
+Usar um `while` para gerar números aleatórios até atingir um número específico.
+```python
+import random
+
+target = 5
+while True:
+    num = random.randint(1, 10)
+    print(f"Número gerado: {num}")
+    if num == target:
+        print("Número alvo alcançado!")
+        break
+```
+
+---
+
+### **5. Cuidados ao Usar `while`**
+- **Condição Infinita**: Sempre garanta que a condição do `while` possa eventualmente se tornar `False`.
+- **Debugging**: Use prints para entender o comportamento do loop.
+- **Entradas do Usuário**: Valide entradas para evitar loops indesejados.
+
+---
